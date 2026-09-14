@@ -1,6 +1,6 @@
 # PCA9685 16-Channel 12-Bit PWM Servo Driver
 
-<img src="images/renders/iso-front-left.png" width="520" alt="PCA9685 servo driver board, front-left view">
+<img src="images/renders/iso-front-left.png" width="560" alt="PCA9685 servo driver board, front-left view">
 
 Sixteen independent PWM channels on two wires. An NXP PCA9685 generates the
 pulses on its own 25 MHz oscillator, so the host only sends a number over I²C
@@ -31,7 +31,7 @@ bulk capacitor sitting right on V+.
 
 ## The board
 
-<img src="images/renders/bottom.png" width="520" alt="Underside of the board showing the silkscreen legend, address jumpers and regulator jumpers">
+<img src="images/renders/bottom.png" width="700" alt="Underside of the board showing the silkscreen legend, address jumpers and regulator jumpers">
 
 Everything you need is printed on the back. The short version:
 
