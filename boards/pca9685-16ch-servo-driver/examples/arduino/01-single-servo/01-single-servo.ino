@@ -26,9 +26,9 @@ static const int SCL_PIN = 9;
 // A board with no address jumpers bridged answers here.
 static const uint8_t PCA9685_ADDR = 0x40;
 
-// The data sheet calls the internal oscillator 25 MHz typical; real parts land
-// a few percent away. 27 MHz is what Adafruit's own example uses and what these
-// boards measure closest to. See docs/registers.md for how to trim it yourself.
+// The data sheet calls the internal oscillator 25 MHz typical and gives no
+// tolerance. 27 MHz is what Adafruit's own servo example assumes. Measure yours:
+// https://learn.lonelybinary.com/manuals/pca9685/4096-counts
 static const uint32_t PCA9685_OSC_HZ = 27000000UL;
 
 static const uint16_t SERVO_FREQ_HZ = 50;

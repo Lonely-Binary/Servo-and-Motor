@@ -15,7 +15,7 @@
  * Wiring, ESP32-S3:
  *   GND -> GND        SDA -> GPIO 8
  *   VCC -> 3V3        SCL -> GPIO 9
- *   Each board needs its own address. See docs/i2c-addressing.md.
+ *   Each board needs its own address: six-pads-one-address in the handbook.
  *   Power the servos from a dedicated adapter, not from a computer.
  *
  * Serial commands: status | scan | help
@@ -40,7 +40,7 @@ static const uint8_t MAX_BOARDS = 2;
 static const uint8_t CH_PER_BOARD = 16;
 static const uint8_t TOTAL_CH = MAX_BOARDS * CH_PER_BOARD;
 static const uint8_t MODE1_REG = 0x00;
-static const uint32_t PCA9685_OSC_HZ = 27000000UL;   // see docs/registers.md
+static const uint32_t PCA9685_OSC_HZ = 27000000UL;   // see 4096-counts in the handbook
 
 static const uint16_t SERVO_FREQ_HZ = 50;
 static const uint16_t PULSE_MIN_US = 500;
@@ -104,7 +104,8 @@ uint8_t onlineCount() {
 
 /*
  * count = us * osc / (1e6 * (prescale + 1)), because one counter tick is
- * (prescale + 1) / osc seconds. See docs/registers.md.
+ * (prescale + 1) / osc seconds. See
+ * https://learn.lonelybinary.com/manuals/pca9685/4096-counts
  */
 uint16_t angleToCount(const Board& board, uint16_t angle) {
   angle = constrain(angle, (uint16_t)0, (uint16_t)180);

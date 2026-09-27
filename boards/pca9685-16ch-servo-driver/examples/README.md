@@ -51,7 +51,8 @@ mpremote run micropython/main.py
 
 [`pca9685.py`](micropython/pca9685.py) is about a hundred lines and talks to the
 registers directly, so it doubles as a readable account of what the chip
-actually wants. [`registers.md`](../docs/registers.md) explains the arithmetic.
+actually wants. [4096 counts](https://learn.lonelybinary.com/manuals/pca9685/4096-counts)
+in the handbook explains the arithmetic.
 
 ## A note on the oscillator constant
 
@@ -62,10 +63,10 @@ static const uint32_t PCA9685_OSC_HZ = 27000000UL;
 ```
 
 The data sheet calls the internal oscillator 25 MHz *typical* and publishes no
-tolerance. Real parts land a few percent away, which is a few degrees of servo
-error and a nominal 50 Hz that measures closer to 52. 27 MHz is the value
-Adafruit's own example uses and what these boards measure nearest to.
+tolerance. 27 MHz is the value Adafruit's own servo example uses. If the
+constant is wrong, every pulse is wrong by the same fraction, which shows up as
+a few degrees of error on every servo on the board.
 
-If you want it exact, measure one channel's period with a scope and work
-backwards — the procedure is in
-[docs/registers.md](../docs/registers.md#trimming-the-oscillator).
+To make it exact, measure one channel's period with a scope or a logic
+analyser and work backwards. The procedure is in
+[4096 counts](https://learn.lonelybinary.com/manuals/pca9685/4096-counts).
