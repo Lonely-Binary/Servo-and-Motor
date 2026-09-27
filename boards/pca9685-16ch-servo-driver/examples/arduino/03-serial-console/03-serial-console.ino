@@ -40,7 +40,7 @@ static const uint8_t CHANNELS = 16;
 static const uint16_t SERVO_FREQ_HZ = 50;
 static const uint16_t PULSE_MIN_US = 500;
 static const uint16_t PULSE_MAX_US = 2500;
-static const uint32_t PCA9685_OSC_HZ = 27000000UL;   // see docs/registers.md
+static const uint32_t PCA9685_OSC_HZ = 27000000UL;   // see 4096-counts in the handbook
 static const uint16_t DEFAULT_ANGLE = 0;
 
 Adafruit_PWMServoDriver* drv = nullptr;

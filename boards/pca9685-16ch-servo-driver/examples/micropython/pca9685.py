@@ -1,7 +1,8 @@
 """Minimal PCA9685 driver for MicroPython.
 
 No dependencies beyond machine.I2C. Enough to drive servos and to see what the
-registers are actually doing; see docs/registers.md for the arithmetic.
+registers are actually doing. The arithmetic is in the handbook:
+https://learn.lonelybinary.com/manuals/pca9685/4096-counts
 """
 
 import struct

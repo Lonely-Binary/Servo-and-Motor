@@ -26,7 +26,7 @@
 static const int SDA_PIN = 8;
 static const int SCL_PIN = 9;
 
-static const uint32_t PCA9685_OSC_HZ = 27000000UL;   // see docs/registers.md
+static const uint32_t PCA9685_OSC_HZ = 27000000UL;   // see 4096-counts in the handbook
 static const uint16_t SERVO_FREQ_HZ = 50;
 static const uint16_t PULSE_MIN_US = 1000;           // 0 degrees
 static const uint16_t PULSE_MAX_US = 2000;           // 180 degrees
